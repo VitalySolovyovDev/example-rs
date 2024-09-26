@@ -1,0 +1,72 @@
+{
+  "name": "react-mobx-ts-example",
+  "version": "1.0.0",
+  "description": "TS+React+Mobx example",
+  "main": "index.js",
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 20.12.1"
+  },
+  "scripts": {
+    "dev:rspack": "better-npm-run dev:rspack"
+  },
+  "betterScripts": {
+    "dev:rspack": {
+      "command": "rspack serve -c rspack.config.ts",
+      "env": {
+        "NODE_OPTIONS": "--import tsx",
+        "NODE_ENV": "development"
+      }
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-proposal-decorators": "^7.24.7",
+    "@babel/plugin-transform-runtime": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@rspack/cli": "^1.0.2",
+    "@rspack/core": "^1.0.2",
+    "@rspack/plugin-react-refresh": "^1.0.0",
+    "@swc/plugin-react-remove-properties": "^2.0.5",
+    "@types/css-modules": "^1.0.5",
+    "@types/fontfaceobserver": "^2.1.3",
+    "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "babel-loader": "^9.1.3",
+    "better-npm-run": "~0.1.1",
+    "css-loader": "^7.1.1",
+    "mini-css-extract-plugin": "^2.9.0",
+    "react-refresh": "~0.14.2",
+    "sass": "^1.77.6",
+    "sass-embedded": "^1.77.5",
+    "sass-loader": "^14.2.0",
+    "sharp": "~0.33.4",
+    "style-loader": "^4.0.0",
+    "svgo": "^3.3.2",
+    "tsx": "^4.16.2",
+    "typescript": "~5.5.3"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/base": "5.0.0-beta.40",
+    "@mui/icons-material": "^5.15.21",
+    "@mui/lab": "5.0.0-alpha.170",
+    "@mui/material": "~5.15.21",
+    "decimal.js": "^10.4.3",
+    "fontfaceobserver": "^2.3.0",
+    "mobx": "^6.13.0",
+    "mobx-react-lite": "^4.0.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.0",
+    "remeda": "^2.3.0"
+  }
+}

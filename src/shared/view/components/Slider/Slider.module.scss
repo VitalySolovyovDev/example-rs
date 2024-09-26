@@ -1,0 +1,159 @@
+$line-offset: 8px;
+
+.root {
+  display: flex;
+
+  padding: 18px $line-offset 0;
+
+  &.with-start-label,
+  .with-end-label {
+    align-items: center;
+    column-gap: 13px;
+  }
+
+  &.with-start-label {
+    padding-left: 0;
+  }
+
+  &.with-end-label {
+    padding-right: 0;
+  }
+}
+
+.slider {
+  height: 4px;
+  padding: 8px 0;
+
+  border-radius: 2px;
+
+  &.disabled {
+    .track,
+    .thumb {
+      background-color: #787878;
+    }
+
+    .thumb {
+      border: 1px solid #231f30;
+    }
+
+    .value-label {
+      color: #565861;
+    }
+  }
+}
+
+.transparent {
+  .track {
+    background: transparent;
+  }
+}
+
+.start-label,
+.end-label {
+  cursor: pointer;
+
+  font-size: 12px;
+  line-height: 16px;
+
+  &.transparent {
+    color: #a2a7b9;
+  }
+
+  &.highlight {
+    color: #0078ff;
+  }
+
+  &.disabled {
+    cursor: auto;
+
+    color: #888d9d;
+  }
+}
+
+.rail {
+  width: calc(100% + ($line-offset * 2));
+  height: 4px;
+  margin: 0 (-$line-offset);
+
+  border-radius: 4px;
+
+  opacity: 0.15;
+  background: #fff;
+}
+
+.track {
+  margin: 0 (-$line-offset);
+
+  background-color: #0078ff;
+}
+
+.thumb {
+  width: 20px;
+  height: 20px;
+
+  border: 1px solid #231f30;
+  background: #fff;
+
+  box-shadow: none !important;
+
+  &::after,
+  &::before {
+    content: none;
+  }
+}
+
+.mark {
+  width: 14px;
+  height: 14px;
+
+  margin-left: -6px;
+
+  opacity: 1;
+  border: 4px solid #404040;
+  border-radius: 50%;
+
+  background: #231f30;
+
+  &[style='left: 0%;'] {
+    margin-left: -8px;
+  }
+
+  &[style='left: 100%;'] {
+    margin-left: -4px;
+  }
+}
+
+.mark-active {
+  border: 3px solid #231f30;
+  background: #0078ff;
+}
+
+.mark-label {
+  top: 33px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+
+  color: #a2a7b9;
+}
+
+.value-label {
+  margin: 0 !important;
+  padding: 4px;
+
+  letter-spacing: 0.25px;
+
+  background: none;
+
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 14px;
+
+  color: #fff;
+}
+
+.value-label-popper {
+  z-index: auto;
+}

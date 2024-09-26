@@ -1,0 +1,97 @@
+.root-tooltip {
+  max-width: 360px;
+  margin: 10px;
+  padding: 12px;
+
+  user-select: none;
+
+  border-radius: 8px;
+  box-shadow: 0 5px 24px 0 rgba(0, 0, 0, 0.1);
+  color: #fff;
+  border: 1px solid #323545;
+  background-color: #221f2f;
+
+  font-size: 12px;
+
+  font-weight: 500;
+  line-height: 14px;
+
+  p {
+    margin: 8px 0;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    margin-top: 8px;
+  }
+
+  :global(.green) {
+    color: green;
+  }
+
+  :global(.red) {
+    color: red;
+  }
+
+  :global(.orange) {
+    color: orange;
+  }
+
+  &.error {
+    .title,
+    .message {
+      color: red;
+    }
+  }
+
+  &.wide {
+    max-width: 700px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 8px;
+}
+
+.title {
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #a2a7b9;
+}
+
+.message {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+
+  color: #fff;
+}
+
+// body height 100% causes incorrect popper positioning if top is not fixed (MUI uses popperjs)
+// https://github.com/popperjs/popper-core/issues/457#issuecomment-367692177
+
+.popper {
+  top: 0;
+  z-index: 2000; // Should be equal with z-index of Modal root component
+
+  pointer-events: auto;
+
+  &[data-popper-placement*='bottom'] {
+    .root-tooltip {
+      margin-top: 5px;
+    }
+  }
+
+  &[data-popper-placement*='top'] {
+    .root-tooltip {
+      margin-bottom: 8px;
+    }
+  }
+}
